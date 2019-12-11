@@ -1,0 +1,77 @@
+<div class="wrapper">
+  <form [formGroup]="pensionerAddForm" (ngSubmit)="submit()">
+    <div class="form-header">
+      <p>Форма додавання нової людини</p>
+    </div>
+
+    <mat-form-field>
+      <input matInput
+             type="text"
+             placeholder="ПІБ"
+             name="name"
+             formControlName="name">
+      <mat-error *ngIf="formErrors.name">{{formErrors.name}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             [matDatepicker]="picker"
+             placeholder="Дата народження"
+             name="dateOfBirth"
+             formControlName="dateOfBirth">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="formErrors.dateOfBirth">{{formErrors.dateOfBirth}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             type="number"
+             placeholder="Коефіцієнт для розрахунку пенсії"
+             name="cofficient"
+             formControlName="cofficient">
+      <mat-error *ngIf="formErrors.cofficient">{{formErrors.cofficient}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             type="number"
+             placeholder="Фіксована надбавка"
+             name="fixedPayment"
+             formControlName="fixedPayment">
+      <mat-error *ngIf="formErrors.fixedPayment">{{formErrors.fixedPayment}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             type="text"
+             placeholder="Тип пенсії"
+             name="type"
+             formControlName="type">
+      <mat-error *ngIf="formErrors.type">{{formErrors.type}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Стать</mat-label>
+      <mat-select  name="sex" formControlName="sex">
+        <mat-option value="f">Жіноча</mat-option>
+        <mat-option value="m">Чоловіча</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-checkbox name="standalone"
+                  formControlName="standalone">Інвалідність
+    </mat-checkbox>
+
+    <mat-form-field>
+      <input matInput
+             placeholder="Назва для оновлення"
+             name="modifierName"
+             formControlName="modifierName">
+      <mat-error *ngIf="formErrors.modifierName">{{formErrors.modifierName}}</mat-error>
+    </mat-form-field>
+
+    <button mat-button type="submit" class="c-button" [disabled]="pensionerAddForm.invalid" >Додати</button>
+
+  </form>
+</div>
