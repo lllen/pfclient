@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.snackbar-success-message {
+  background-color: lightgreen;
+  color: black;
+}
+
+.snackbar-error-message {
+  background-color: indianred;
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .group-wrapper {
+    text-align: center;
+    padding: 25px 0;
+  }
+
+  .form-header {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+
+    mat-checkbox {margin-bottom: 20px;}
+
+    mat-form-field {
+      margin: 15px 0;
+      width: 100%;
+    }
+
+    .double-inputs {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      mat-form-field {
+        width: 45%;
+      }
+    }
+  }
+}
+
+div.links {
+  padding: 0 30px;
+  a.toolbar-link {
+    color: white !important;
+    padding: 0 10px;
+
+    &:hover {
+      color: white !important;
+      font-weight: 800;
+    }
+  }
+}
+
+.toolbar {margin: 0 !important;}
